@@ -1,11 +1,13 @@
 import { UserButton } from '@clerk/clerk-react'
 import React from 'react'
+import Navbar from '../components/custom/Navbar'
 
 function HomePage() {
   return (
     <div>
-      <h1>LANDING PAGE 📃📟</h1>
-      <UserButton />
+      <Navbar />
+      <h1 className='flex justify-center my-20 text-slate-950 font-extrabold'>LANDING PAGE 📃📟</h1>
+
     </div>
   )
 }

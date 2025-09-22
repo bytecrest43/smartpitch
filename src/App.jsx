@@ -1,9 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import { useUser } from "@clerk/clerk-react";
+import Navbar from "./components/custom/Navbar";
 
 function App() {
-  const { user, isSignedIn, isLoaded } = useUser();
+  const {  isSignedIn, isLoaded } = useUser();
 
   
   if (!isSignedIn && isLoaded) {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <Outlet />
     </>
   );
