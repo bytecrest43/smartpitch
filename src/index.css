@@ -51,7 +51,8 @@
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary: #007AFF;
   --primary-foreground: #FFFFFF;
-  --secondary: #FFFFFF;
+  /* Glass-like greyscale secondary (light) */
+  --secondary: oklch(0.98 0 0 / 60%);
   --secondary-foreground: #312ECB;
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
@@ -85,7 +86,8 @@
   --popover-foreground: oklch(0.984 0.003 247.858);
   --primary: #007AFF;
   --primary-foreground: #FFFFFF;
-  --secondary: #1b1b2f;
+  /* Glass-like greyscale secondary (dark) */
+  --secondary: oklch(0.22 0 0 / 45%);
   --secondary-foreground: #FFFFFF;
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
@@ -116,5 +118,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Enhance bg-secondary with a subtle glass effect */
+@layer utilities {
+  .bg-secondary {
+    /* keep Tailwind background color via --secondary, add glassiness */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* subtle border to reinforce glass edge */
+    border: 1px solid color-mix(in oklch, var(--border) 100%, transparent);
   }
 }

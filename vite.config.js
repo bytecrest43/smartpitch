@@ -14,4 +14,16 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Stabilize WebSocket HMR in local/proxied environments
+  server: {
+    host: true, // listen on all addresses (useful for containers/VMs)
+    port: 5173,
+    strictPort: true,
+    hmr: {
+      protocol: "ws",
+      host: "localhost",
+      port: 5173,
+      clientPort: 5173,
+    },
+  },
 })

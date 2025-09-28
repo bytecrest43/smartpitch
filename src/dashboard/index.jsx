@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
+import AddResume from "./components/AddResume";
 
 function Dashboard() {
   return (
-    <div>
-      <h1>DASHBOARD 📊📈</h1>
+    <div className="p-10 md:px-20 lg:px-32">
+      <h2 className="font-bold text-3xl">MY RESUME</h2>
+      <p className="font-serif font-italic">AI Resumes Made Simple. Results Made Powerful</p>
+
+      <div
+        className="grid 
+         grid-cols-2
+         md:grid-cols-3 
+         lg:grid-cols-5
+         mt-10"
+      >
+        <AddResume />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
