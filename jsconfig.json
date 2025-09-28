@@ -1,12 +1,6 @@
 {
-  "files": [],
+  // "files": [], // Removed to avoid empty files array error
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
   ],
   "compilerOptions": {
     "baseUrl": ".",

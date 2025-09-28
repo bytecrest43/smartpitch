@@ -12,12 +12,14 @@ import { Input } from "../../components/ui/input";
 import { v4 as uuidv4 } from "uuid";
 import GlobalApi from "../../../service/GlobalApi";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 function AddResume() {
   const [openDialog, setOpenDialog] = useState(false);
   const [resumeTitle, setResumeTitle] = useState();
   const [loading, setLoading]= useState(false);
   const { user } = useUser();
+  const navigate = useNavigate();
 
   const handleCreate = () => {
     setLoading(true);
@@ -30,11 +32,12 @@ function AddResume() {
     };
 
    GlobalApi.CreateNewResume(data).then(res => {
-    console.log(res);
+    console.log(res.data.data.documentId);
     if(res){
       setLoading(false);
+      navigate('/dashboard/resume/' + res.data.data.documentId + '/edit');
     }
-   },(error)=>{
+   },()=>{
     setLoading(false);
    })
   };
