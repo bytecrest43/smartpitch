@@ -1,4 +1,4 @@
-# 📝 AI Resume Builder  
+# 📝 SmartPitch 
 
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)  
 [![React](https://img.shields.io/badge/react-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)  
